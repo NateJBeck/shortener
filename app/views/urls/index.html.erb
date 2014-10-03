@@ -2,3 +2,11 @@
 
 <%= link_to "Shorten a URL", new_url_path %>
 
+<ul>
+  <% @url.each do |url| %>
+    <li>
+      <%= url.shorter %> 
+    </li>
+  <% end %>
+</ul>
+

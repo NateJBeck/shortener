@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
   def index
+    @url = Url.all
   end
 
   def new 
@@ -8,7 +9,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new
-    @new_url = shorten_url
+    @new_url = shorten_url(url_params)
 
     redirect_to "/"
   end
@@ -19,8 +20,8 @@ class UrlsController < ApplicationController
     params.require(:url).permit(:original)
   end
 
-  def shorten_url
-    @url 
+  def shorten_url(url_params)
+    @url
   end
 
 end
