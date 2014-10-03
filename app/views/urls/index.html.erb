@@ -5,7 +5,7 @@
 <ul>
   <% @url.each do |url| %>
     <li>
-      <%= url.shorter %> 
+      <%= link_to url.original %> - <%= url.shorter %></p> 
     </li>
   <% end %>
 </ul>

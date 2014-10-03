@@ -8,8 +8,8 @@ class UrlsController < ApplicationController
   end
 
   def create
-    @url = Url.new
-    @new_url = shorten_url(url_params)
+    @url = Url.new(url_params)
+    @url.save
 
     redirect_to "/"
   end
@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
   end
 
   def shorten_url(url_params)
-    @url
+   # Url.find(params[:id])
   end
 
 end
