@@ -15,8 +15,13 @@ class UrlsController < ApplicationController
     redirect_to url_path(@url)
   end
 
-  def show
+  def show_original
     @url = Url.find(params[:id])
+  end
+
+  def show
+    url = Url.find(params[:id])
+    redirect_to url.original
   end
 
   private
