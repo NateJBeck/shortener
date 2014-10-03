@@ -1,6 +1,7 @@
 class UrlsController < ApplicationController
   def index
     @url = Url.all
+    @newest_url = Url.last
   end
 
   def new 
@@ -12,10 +13,10 @@ class UrlsController < ApplicationController
     @url.save
     @url.update(shorter: @url.id)
 
-    redirect_to url_path(@url)
+    redirect_to root_path
   end
 
-  def show_original
+  def show_works
     @url = Url.find(params[:id])
   end
 

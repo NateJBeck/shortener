@@ -1,7 +1,11 @@
 <h1>Welcome to Shortner, the better one</h1>
 
 <%= link_to "Shorten a URL", new_url_path %>
+<div>
+</div>
+<%= @newest_url.shorter %>
 
+  
 <ul>
   <% @url.each do |url| %>
     <li>
