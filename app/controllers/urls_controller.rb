@@ -12,7 +12,11 @@ class UrlsController < ApplicationController
     @url.save
     @url.update(shorter: @url.id)
 
-    redirect_to "/"
+    redirect_to url_path(@url)
+  end
+
+  def show
+    @url = Url.find(params[:id])
   end
 
   private
